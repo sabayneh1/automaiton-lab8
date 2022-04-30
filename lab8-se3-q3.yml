@@ -1,0 +1,17 @@
+- name: this will copy a file 
+  hosts: ansible-c07-vm1
+  tasks:
+  - name: copy a file 
+    copy: 
+      src: /etc/issue
+      dest: /etc/issue-n01516507
+      owner: user4000
+      group: clouldadmins 
+      mode: '0444'
+
+- name: Change time Zhone 
+  hosts: linux
+  tasks:
+  - name: change time Zhone
+    community.general.timezone:
+      name: America/Edmonton     

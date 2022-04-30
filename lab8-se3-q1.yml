@@ -1,0 +1,10 @@
+- name: this will install softwre in local host 
+  hosts: localhost 
+  tasks:
+  - name: install a software 
+    yum:
+     name:
+        - ypserv 
+     state: latest 
+
+    

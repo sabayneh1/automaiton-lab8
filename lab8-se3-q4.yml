@@ -1,0 +1,16 @@
+- name: this will create users and group
+  hosts: ansible-c07-vm2
+  tasks:
+  - name: Create group 
+    group:
+      name: Devops
+      gid: 2000
+      state: present 
+  - name: Create user
+    user:
+
+      name: Devops1
+      uid: 2500
+      groups: Devops
+      append: yes
+      state: present 

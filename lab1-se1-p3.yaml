@@ -1,0 +1,11 @@
+- name: this will check if nmap if is installed 
+  hosts: ansible-c07-vm1
+  vars:
+    packages: nmap
+
+  tasks:
+    - name: Install "{{ packages }}" software
+      yum:
+        name: "{{ packages }}" 
+        state: latest 
+      when: packages is defined   

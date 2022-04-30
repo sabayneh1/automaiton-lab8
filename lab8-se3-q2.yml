@@ -1,0 +1,33 @@
+- name: this will create users and grou
+  hosts: ansible-c07-vm1
+  tasks:
+  - name: Create user
+    user:
+     name: user4000
+     uid: 5000
+     state: present 
+  - name: Create group 
+    group:
+      name: clouldadmins 
+      gid: 2000
+      state: present 
+
+- name: this will install softwre in linux
+  hosts: linux 
+    
+  tasks:
+  - name: install a software 
+    yum:
+     name:
+        - httpd
+        - nmap
+     state: present
+    
+  - name: enabling apache
+    systemd:
+      name: httpd
+      state: started
+      enabled: yes
+
+    
+
